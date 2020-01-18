@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
+android:background="@drawable/aa">
+
+
+  <EditText
+      android:id="@+id/rdname"
+      android:layout_width="333dp"
+      android:layout_height="51dp"
+      android:layout_marginLeft="37dp"
+      android:layout_marginTop="115dp"
+      android:background="@drawable/bt"
+      android:drawableStart="@drawable/username"
+      android:drawableLeft="@drawable/username"
+      android:hint="Name"
+      android:paddingLeft="8dp"
+      android:paddingTop="8dp"
+      android:paddingRight="16dp"
+      android:paddingBottom="8dp"
+      android:textColor="@color/black"
+      android:textColorHint="@color/black"
+      android:textSize="20sp"
+      android:textStyle="bold" />
+
+  <EditText
+      android:id="@+id/dw"
+      android:layout_width="333dp"
+      android:layout_height="51dp"
+      android:hint="Date"
+      android:background="@drawable/bt"
+      android:drawableStart="@drawable/datee"
+      android:drawableLeft="@drawable/datee"
+      android:focusable="false"
+      android:inputType="date"
+      android:paddingLeft="8dp"
+      android:paddingRight="16dp"
+      android:paddingBottom="8dp"
+      android:textColor="@color/black"
+      android:textColorHint="@color/black"
+      android:textSize="16sp"
+
+      android:windowSoftInputMode="stateAlwaysHidden"
+      android:layout_marginLeft="37dp"
+      android:layout_marginTop="19dp" />
+
+  <EditText
+      android:id="@+id/docyou1"
+      android:layout_width="333dp"
+      android:layout_height="51dp"
+      android:hint="Phone Number"
+      android:inputType="phone"
+      android:background="@drawable/bt"
+      android:drawableLeft="@drawable/phone"
+      android:drawableStart="@drawable/phone"
+      android:maxLength="10"
+      android:textColorHint="@color/black"
+      android:paddingLeft="8dp"
+      android:paddingRight="16dp"
+      android:paddingBottom="8dp"
+      android:textColor="@color/black"
+      android:textSize="16sp"
+      android:layout_marginLeft="37dp"
+      android:layout_marginTop="19dp" />
+
+  <EditText
+      android:id="@+id/dexp"
+      android:layout_width="333dp"
+      android:layout_height="184dp"
+      android:layout_marginLeft="37dp"
+      android:layout_marginTop="19dp"
+      android:background="@drawable/bt"
+      android:hint="Experiance"
+android:drawableStart="@drawable/enter"
+      android:drawableLeft="@drawable/enter"
+      android:paddingLeft="8dp"
+      android:paddingTop="8dp"
+      android:paddingRight="16dp"
+      android:paddingBottom="8dp"
+      android:textColor="@color/black"
+      android:textColorHint="@color/black"
+      android:textSize="16sp" />
+
+  <Button
+      android:id="@+id/exp_btn"
+      android:layout_width="wrap_content"
+      android:layout_height="40dp"
+
+      android:background="@drawable/btn"
+      android:onClick="logout"
+      android:padding="4dp"
+      android:text="UPDATE"
+      android:textAllCaps="false"
+      android:textColor="@color/black"
+      android:layout_marginLeft="155dp"
+      android:layout_marginTop="85dp"
+      android:textSize="16sp"
+      />
+
+
+</LinearLayout>
