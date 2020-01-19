@@ -142,7 +142,7 @@ check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                                     ee.putString("address",e);
                                     ee.putString("gender",f);
                                     ee.putString("dob",g);
-ee.apply();
+                                    ee.apply();
 
                                     startActivity(in);
                                 }

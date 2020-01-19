@@ -4,19 +4,9 @@
 
 
 
-
     <item
 
-        android:id="@+id/techersde"
-        android:title="Profile"
-
-
-        />
-
-
-    <item
-
-        android:id="@+id/log"
+        android:id="@+id/logg"
         android:title="Logout" />
 
 </menu>

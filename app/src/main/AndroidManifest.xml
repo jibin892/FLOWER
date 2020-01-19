@@ -18,7 +18,10 @@
         android:theme="@style/MyMaterialTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
-        <activity android:name=".Purchaseconfirm"></activity>
+        <activity android:name=".Review"></activity>
+        <activity android:name=".Peofile" />
+        <activity android:name=".Recipt" />
+        <activity android:name=".Purchaseconfirm" />
         <activity android:name=".Purchase" />
         <activity android:name=".Eventok" />
         <activity android:name=".Event_admin" />
@@ -55,14 +58,15 @@
         <activity android:name=".Class_time_Admin" />
         <activity android:name=".Phycology" />
         <activity android:name=".Phycologist_detailes" />
+        <activity android:name=".Eventok1"/>
         <activity android:name=".Admin_login" />
         <activity android:name=".Registration" />
         <activity android:name=".MainActivityhome" />
         <activity android:name=".Online" />
+
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_test_ccCLHM5IY50Xe1"
-            />
+            android:value="rzp_test_ccCLHM5IY50Xe1" />
         <meta-data
             android:name="sendotp.key"
             android:value="@string/sendotp_key" />

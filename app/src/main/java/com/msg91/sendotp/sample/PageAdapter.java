@@ -28,9 +28,9 @@ public class PageAdapter extends FragmentPagerAdapter {
                 return new ChatFragment();
 
 
-            case 2:
-
-                  return new CallFragment1();
+//            case 2:
+//
+//                  return new CallFragment1();
             default:
                 return null;
         }

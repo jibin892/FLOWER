@@ -67,7 +67,7 @@ String a,b,c,d,e,f,g;
 
                                        Doctor doctor=new Doctor();
                                         doctor.setName(json_obj.getString("name"));
-doctor.setType(json_obj.getString("type"));
+                                        doctor.setType(json_obj.getString("type"));
                                     goodModelArrayList.add(doctor);
                                 }
 //Toast.makeText(Recharge.this, "your new balnce is "+ba, Toast.LENGTH_LONG).show();

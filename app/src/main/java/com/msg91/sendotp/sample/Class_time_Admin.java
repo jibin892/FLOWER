@@ -57,6 +57,7 @@ public class Class_time_Admin extends AppCompatActivity {
         productprice = findViewById(R.id.productammount);
         imgbtn = findViewById(R.id.imgupload);
        imgview = findViewById(R.id.imgview);
+       // productid= findViewById(R.id.productname2);
         f_btn = findViewById(R.id.f_btn);
 
         imgbtn.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +126,7 @@ public class Class_time_Admin extends AppCompatActivity {
                             data.put("name", productname.getText().toString());
                             data.put("det",productdetails.getText().toString());
                             data.put("price",productprice.getText().toString());
+                          //  data.put("id",productid.getText().toString());
                             data.put("img",uploadImage);
                             String result = rh.sendPostRequest("https://androidprojectstechsays.000webhostapp.com/Flower_maegument_system/upload_image.php", data);
 

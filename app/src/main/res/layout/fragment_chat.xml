@@ -5,19 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
 
-android:background="@drawable/aa">
+android:background="@drawable/gradient_bg">
 
 
   <EditText
-      android:id="@+id/rdname"
+      android:id="@+id/trtid"
       android:layout_width="333dp"
       android:layout_height="51dp"
-      android:layout_marginLeft="37dp"
-      android:layout_marginTop="115dp"
-      android:background="@drawable/bt"
-      android:drawableStart="@drawable/username"
-      android:drawableLeft="@drawable/username"
-      android:hint="Name"
+      android:layout_marginLeft="40dp"
+      android:layout_marginTop="15dp"
+      android:background="@drawable/btnn"
+      android:drawableStart="@drawable/enter"
+      android:drawableLeft="@drawable/enter"
+      android:hint="Enter Your Track ID"
       android:paddingLeft="8dp"
       android:paddingTop="8dp"
       android:paddingRight="16dp"
@@ -27,36 +27,44 @@ android:background="@drawable/aa">
       android:textSize="20sp"
       android:textStyle="bold" />
 
-  <EditText
-      android:id="@+id/dw"
+  <Button
+      android:id="@+id/tr_btn"
+      android:layout_width="wrap_content"
+      android:layout_height="40dp"
+
+      android:layout_marginLeft="155dp"
+      android:layout_marginTop="15dp"
+      android:background="@drawable/btn"
+      android:onClick="logout"
+      android:padding="4dp"
+      android:text="SERCH"
+      android:textAllCaps="false"
+      android:textColor="@color/white"
+      android:textSize="16sp" />
+
+  <TextView
+      android:id="@+id/tpn"
       android:layout_width="333dp"
       android:layout_height="51dp"
-      android:hint="Date"
+      android:hint="Product Name"
+      android:padding="10dp"
       android:background="@drawable/bt"
-      android:drawableStart="@drawable/datee"
-      android:drawableLeft="@drawable/datee"
-      android:focusable="false"
-      android:inputType="date"
       android:paddingLeft="8dp"
       android:paddingRight="16dp"
       android:paddingBottom="8dp"
       android:textColor="@color/black"
       android:textColorHint="@color/black"
       android:textSize="16sp"
-
-      android:windowSoftInputMode="stateAlwaysHidden"
       android:layout_marginLeft="37dp"
       android:layout_marginTop="19dp" />
 
-  <EditText
-      android:id="@+id/docyou1"
+  <TextView
+      android:id="@+id/tpd"
       android:layout_width="333dp"
       android:layout_height="51dp"
-      android:hint="Phone Number"
-      android:inputType="phone"
+      android:hint="Product Details"
+      android:padding="10dp"
       android:background="@drawable/bt"
-      android:drawableLeft="@drawable/phone"
-      android:drawableStart="@drawable/phone"
       android:maxLength="10"
       android:textColorHint="@color/black"
       android:paddingLeft="8dp"
@@ -67,16 +75,15 @@ android:background="@drawable/aa">
       android:layout_marginLeft="37dp"
       android:layout_marginTop="19dp" />
 
-  <EditText
-      android:id="@+id/dexp"
-      android:layout_width="333dp"
-      android:layout_height="184dp"
+  <TextView
+      android:id="@+id/tnos"
+      android:layout_width="335dp"
+      android:layout_height="53dp"
       android:layout_marginLeft="37dp"
       android:layout_marginTop="19dp"
       android:background="@drawable/bt"
-      android:hint="Experiance"
-android:drawableStart="@drawable/enter"
-      android:drawableLeft="@drawable/enter"
+      android:hint="Nos"
+      android:padding="10dp"
       android:paddingLeft="8dp"
       android:paddingTop="8dp"
       android:paddingRight="16dp"
@@ -85,21 +92,22 @@ android:drawableStart="@drawable/enter"
       android:textColorHint="@color/black"
       android:textSize="16sp" />
 
-  <Button
-      android:id="@+id/exp_btn"
-      android:layout_width="wrap_content"
-      android:layout_height="40dp"
-
-      android:background="@drawable/btn"
-      android:onClick="logout"
-      android:padding="4dp"
-      android:text="UPDATE"
-      android:textAllCaps="false"
+  <TextView
+      android:id="@+id/tpr"
+      android:layout_width="335dp"
+      android:layout_height="53dp"
+      android:layout_marginLeft="37dp"
+      android:layout_marginTop="19dp"
+      android:background="@drawable/bt"
+      android:hint="price"
+      android:padding="10dp"
+      android:paddingLeft="8dp"
+      android:paddingTop="8dp"
+      android:paddingRight="16dp"
+      android:paddingBottom="8dp"
       android:textColor="@color/black"
-      android:layout_marginLeft="155dp"
-      android:layout_marginTop="85dp"
-      android:textSize="16sp"
-      />
+      android:textColorHint="@color/black"
+      android:textSize="16sp" />
 
 
 </LinearLayout>

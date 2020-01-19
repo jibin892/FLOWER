@@ -120,33 +120,10 @@ log.setOnClickListener(new View.OnClickListener() {
 
 
         }
-        if (id==R.id.classtime){
-            Intent ii=new Intent(getActivity(),Phycology.class);
-            startActivity(ii);
-
-//            Toast.makeText(getActivity(),"class",Toast.LENGTH_LONG).show();
 
 
-        }
-        if (id==R.id.onlinesupport){
-            Intent iii=new Intent(getActivity(),Online.class);
-            startActivity(iii);
 
-//            Toast.makeText(getActivity(),"class",Toast.LENGTH_LONG).show();
-
-
-        }
-        if (id==R.id.newdance){
-
-
-            Intent iiii=new Intent(getActivity(), Newaddmision_st.class);
-            startActivity(iiii);
-
-
-        }
-
-
-        if (id==R.id.event){
+        if (id==R.id.log){
 
 
             Intent iiiii=new Intent(getActivity(), Eventok.class);

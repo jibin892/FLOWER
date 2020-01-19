@@ -3,7 +3,9 @@ package com.msg91.sendotp.sample;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -34,91 +36,72 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ChatFragment extends Fragment {
-    private DatePicker datePicker;
-
-    private TextView dateView;
-    DatePickerDialog datePickerDialog;
-    int year;
-    int month;
-    int dayOfMonth;
-    Calendar calendar;
- EditText dname,dphone,demail,dexp;
- Button exp_btn;
+    EditText trackid;
+    Button serch;
+    TextView tproductname,tproductdetails,tracknos,trackprice;
+    String a,b,c,d;
+    SharedPreferences sh;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         setHasOptionsMenu(true);
         View root= inflater.inflate(R.layout.fragment_chat, container, false);
-         dname=root.findViewById(R.id.rdname);
-        dphone=root.findViewById(R.id.docyou1);
-        demail=root.findViewById(R.id.dw);
-        dexp=root.findViewById(R.id.dexp);
-//        dblog=root.findViewById(R.id.dblog);
-        demail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                datePickerDialog = new DatePickerDialog(getActivity(),
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                                demail.setText(day + "/" + (month + 1) + "/" + year);
-                            }
-                        }, year, month, dayOfMonth);
-                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
-                datePickerDialog.show();
-            }
-        });
-        exp_btn=root.findViewById(R.id.exp_btn);
+         trackid=root.findViewById(R.id.trtid);
+        serch=root.findViewById(R.id.tr_btn);
+        tproductname=root.findViewById(R.id.tpn);
+        tproductdetails=root.findViewById(R.id.tpd);
+        tracknos=root.findViewById(R.id.tnos);
+        trackprice=root.findViewById(R.id.tpr);
+   sh=getActivity().getSharedPreferences("Official",MODE_PRIVATE);
 
-        exp_btn.setOnClickListener(new View.OnClickListener() {
+
+        serch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (dname.getText().toString().isEmpty()){
+                if (trackid.getText().toString().isEmpty()){
 
-                    dname.setError("field is empty");
-                }
-                else if (dphone.getText().toString().isEmpty()){
-                    dphone.setError("field is empty");
-
-                }
-                else if (demail.getText().toString().isEmpty()){
-                    demail.setError("field is empty");
-                }
-                else  if (dexp.getText().toString().isEmpty()){
-
-                    dexp.setError("field is empty");
+                    trackid.setError("field is empty");
                 }
 
-                else{
+
+                else {
 
 
-                    StringRequest stringRequest;
-                    stringRequest = new StringRequest(Request.Method.POST, "https://androidprojectstechsays.000webhostapp.com/Dance_App_JPM/Review_Dance.php",
+
+
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://androidprojectstechsays.000webhostapp.com/Flower_maegument_system/track.php",
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
 //If we are getting success from server
-                                    Toast.makeText(getActivity(), response, Toast.LENGTH_LONG).show();
-                                    dname.getText().clear();
-                                    dphone.getText().clear();
-                                    demail.getText().clear();
-                                    dexp.getText().clear();
-//                                    dblog.getText().clear();
-
+//                    Toast.makeText(Phycology2.this,response,Toast.LENGTH_LONG).show();
                                     try {
                                         JSONArray jsonArray = new JSONArray(response);
                                         for (int i = 0; i < jsonArray.length(); i++) {
                                             JSONObject json_obj = jsonArray.getJSONObject(i);
 //ba = json_obj.getString("balance");
+                                            a=json_obj.getString("product_name");
+                                            b=json_obj.getString("product_details");
+                                            c=json_obj.getString("nos");
+                                            d=json_obj.getString("price");
+//                                e=json_obj.getString("address");
+//                                f=json_obj.getString("gender");
+//                                g=json_obj.getString("dob");
 
 
+                                            tproductname.setText(a);
+                                            tproductdetails.setText(b);
+                                            tracknos.setText(c);
+                                            trackprice.setText(d);
                                         }
 //Toast.makeText(Recharge.this, "your new balnce is "+ba, Toast.LENGTH_LONG).show();
                                     } catch (JSONException e) {
@@ -126,7 +109,18 @@ public class ChatFragment extends Fragment {
                                     }
 
 
+
+                                    if (response.contains("enter valid data")) {
+                                        trackid.setError("Enter a valid Track ID");
+                                    }
+
+
+                                    //   Toast.makeText(Signin.this, "success", Toast.LENGTH_LONG).show();
+
                                 }
+
+
+
                             },
 
                             new Response.ErrorListener() {
@@ -140,12 +134,8 @@ public class ChatFragment extends Fragment {
                         protected Map<String, String> getParams() throws AuthFailureError {
                             Map<String, String> params = new HashMap<>();
 //Adding parameters to request
+                            params.put("tid",trackid.getText().toString());
 
-                            params.put("tname", dname.getText().toString());
-                            params.put("tphone", dphone.getText().toString());
-                            params.put("temail", demail.getText().toString());
-                            params.put("tdance", dexp.getText().toString());
-//                            params.put("texperiance", dblog.getText().toString());
 // Toast.makeText(MainActivity.this,"submitted",Toast.LENGTH_LONG).show();
 
 //returning parameter
@@ -167,7 +157,7 @@ public class ChatFragment extends Fragment {
 
                 }
 
-        });
+       });
 
 
 
@@ -193,7 +183,7 @@ public class ChatFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
 
-        inflater.inflate(R.menu.menu_main,menu);
+        inflater.inflate(R.menu.menu_main1,menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -203,44 +193,18 @@ public class ChatFragment extends Fragment {
 
 
 
-        if (id==R.id.techersde){
-
-            Intent i=new Intent(getActivity(),Therapy.class);
-            startActivity(i);
-//            Toast.makeText(getActivity(),"Techers",Toast.LENGTH_LONG).show();
 
 
-        }
-        if (id==R.id.classtime){
-            Intent ii=new Intent(getActivity(),Phycology.class);
-            startActivity(ii);
 
-//            Toast.makeText(getActivity(),"class",Toast.LENGTH_LONG).show();
+        if (id==R.id.logg){
 
-
-        }
-        if (id==R.id.onlinesupport){
-            Intent iii=new Intent(getActivity(),Online.class);
-            startActivity(iii);
-
-//            Toast.makeText(getActivity(),"class",Toast.LENGTH_LONG).show();
+            SharedPreferences.Editor e=sh.edit();
+            e.clear();
+            e.apply();
+            Intent iiiij=new Intent(getActivity(), Signin.class);
+            startActivity(iiiij);
 
 
-        }
-        if (id==R.id.newdance){
-
-
-            Intent iiii=new Intent(getActivity(), Newaddmision_st.class);
-            startActivity(iiii);
-
-
-        }
-
-        if (id==R.id.event){
-
-
-            Intent iiiii=new Intent(getActivity(), Eventok.class);
-            startActivity(iiiii);
 
 
         }

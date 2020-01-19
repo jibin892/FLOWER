@@ -12,7 +12,7 @@ Button phycologist_btn,terapy_btn,event;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
-        phycologist_btn=findViewById(R.id.phycologist_btn);
+//        phycologist_btn=findViewById(R.id.phycologist_btn);
         terapy_btn=findViewById(R.id.terapy_btn);
 event=findViewById(R.id.event);
 
@@ -35,13 +35,13 @@ terapy_btn.setOnClickListener(new View.OnClickListener() {
     }
 });
 
-        phycologist_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(), Teachers_detailes_Admin.class);
-                startActivity(i);
-            }
-        });
+//        phycologist_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i= new Intent(getApplicationContext(), Teachers_detailes_Admin.class);
+//                startActivity(i);
+//            }
+//        });
     }
 
 }

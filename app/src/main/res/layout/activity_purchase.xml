@@ -8,6 +8,48 @@ android:background="@drawable/gradient_bg"
     tools:context="com.msg91.sendotp.sample.Purchase">
 
     <TextView
+        android:id="@+id/pname7"
+        android:layout_width="209dp"
+        android:layout_height="41dp"
+        android:padding="8dp"
+        android:text="price"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.344" />
+
+    <TextView
+        android:id="@+id/pname6"
+        android:layout_width="221dp"
+        android:layout_height="37dp"
+        android:padding="8dp"
+        android:text="product details"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
+
+    <TextView
+        android:id="@+id/pname5"
+        android:layout_width="148dp"
+        android:layout_height="34dp"
+        android:padding="8dp"
+        android:text="product name"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <TextView
         android:id="@+id/pname3"
         android:layout_width="231dp"
         android:layout_height="46dp"
@@ -19,33 +61,35 @@ android:background="@drawable/gradient_bg"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <ImageView
         android:id="@+id/pname4"
-        android:layout_width="182dp"
-        android:layout_height="144dp"
+        android:layout_width="210dp"
+        android:layout_height="140dp"
         android:background="@drawable/btnn"
 
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.582" />
 
     <TextView
         android:id="@+id/pname2"
         android:layout_width="231dp"
         android:layout_height="46dp"
         android:background="@drawable/bt"
-        android:textColor="@color/black"
         android:padding="8dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <TextView
         android:id="@+id/pname"
@@ -59,7 +103,7 @@ android:background="@drawable/gradient_bg"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.405" />
 
     <Button
         android:id="@+id/p_btn"

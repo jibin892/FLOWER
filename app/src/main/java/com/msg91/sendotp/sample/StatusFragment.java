@@ -2,6 +2,7 @@ package com.msg91.sendotp.sample;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -33,6 +34,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,6 +47,7 @@ SwipeRefreshLayout s;
     //the recyclerview
     RecyclerView recyclerView;
 SwipeRefreshLayout swipe;
+    SharedPreferences sh;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -68,13 +72,20 @@ SwipeRefreshLayout swipe;
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         swipe=root.findViewById(R.id.swiperefresh);
-        //initializing the productlist
+        sh=getActivity().getSharedPreferences("Official",MODE_PRIVATE);
         productList = new ArrayList<>();
         swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 productList.clear();
                 loadProducts();
+
+
+
+
+
+
+
             }
         });
         return root;
@@ -110,6 +121,7 @@ swipe.setRefreshing(false);
                                         product.getString("product_name"),
                                         product.getString("product_details"),
                                         product.getString("product_price"),
+//                                        product.getString("product_id")
                                         product.getString("image")
 
 
@@ -175,43 +187,25 @@ swipe.setRefreshing(false);
 
         if (id==R.id.techersde){
 
-            Intent i=new Intent(getActivity(),Therapy.class);
+            Intent i=new Intent(getActivity(),Peofile.class);
             startActivity(i);
 //            Toast.makeText(getActivity(),"Techers",Toast.LENGTH_LONG).show();
 
 
         }
-        if (id==R.id.classtime){
-            Intent ii=new Intent(getActivity(),Phycology.class);
-            startActivity(ii);
-
-//            Toast.makeText(getActivity(),"class",Toast.LENGTH_LONG).show();
 
 
-        }
-        if (id==R.id.onlinesupport){
-            Intent iii=new Intent(getActivity(),Online.class);
-            startActivity(iii);
-
-//            Toast.makeText(getActivity(),"class",Toast.LENGTH_LONG).show();
 
 
-        }
-        if (id==R.id.newdance){
+        if (id==R.id.log){
 
 
-            Intent iiii=new Intent(getActivity(), Newaddmision_st.class);
-            startActivity(iiii);
 
-
-        }
-
-
-        if (id==R.id.event){
-
-
-            Intent iiiii=new Intent(getActivity(), Eventok.class);
-            startActivity(iiiii);
+            SharedPreferences.Editor e=sh.edit();
+            e.clear();
+            e.apply();
+            Intent iiiij=new Intent(getActivity(), Signin.class);
+            startActivity(iiiij);
 
 
         }
